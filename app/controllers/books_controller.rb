@@ -26,9 +26,12 @@ class BooksController < ApplicationController
   end
 
   def update
-  	book=Book.find(params[:id])#更新は、そのidに上書き処理
-  	book.update(book_params)
-  	redirect_to book_path(book),notice: "Book was successfully updated."
+  	@book=Book.find(params[:id])#更新は、そのidに上書き処理
+  	if @book.update(book_params)
+  	    redirect_to book_path(@book),notice: "Book was successfully updated."
+  	else
+  		render action: :edit
+  	end
   end
 
   def destroy

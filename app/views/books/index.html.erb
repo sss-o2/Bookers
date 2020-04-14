@@ -30,7 +30,7 @@
 <%= form_for(@book) do |f| %>
 	<% if @book.errors.any? %>
    		<div id="error_explanation">
-   			<h2><%= @book.errors.count %> erros prohibited this book from being saved:</h2>
+   			<h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
    			  <ul>
                 <% @book.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
@@ -38,8 +38,6 @@
               </ul>
         </div>
     <% end %>
-
-    <%= @book.title %>
 
 	<div>Title</div>
 	<%= f.text_field :title %>
