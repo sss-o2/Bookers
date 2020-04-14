@@ -1,4 +1,4 @@
 class Book < ApplicationRecord
-	validates :tilte, presence: true
+	validates :title, presence: true
 	validates :body, presence: true
 end
